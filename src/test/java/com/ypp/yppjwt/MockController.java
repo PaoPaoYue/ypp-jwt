@@ -1,6 +1,5 @@
 package com.ypp.yppjwt;
 
-import com.ypp.yppjwt.JwtUtil;
 import com.ypp.yppjwt.annotation.CheckLogin;
 import com.ypp.yppjwt.annotation.CheckPermission;
 import org.slf4j.Logger;
@@ -27,13 +26,20 @@ public class MockController {
 
     @PostMapping("/login")
     Map<String, String> login() {
+        /*
+         * do your password authentication before issue token
+         */
         String token = JwtUtil.issue(new UserAuthVo(1, "ypp"));
-
+        /*
+         * you do not need to put token into response body
+         * as when you call issue() it has been put into "Assess-token" response header
+         */
         Map<String, String> map = new HashMap<>();
         map.put("access-token", token);
         return map;
     }
 
+    // pass - if the bearer token is valid
     @CheckLogin
     @GetMapping("/auth")
     Object auth() {
@@ -42,6 +48,7 @@ public class MockController {
         return "success";
     }
 
+    // not pass - the UserAuthVo has no "student" permission
     @CheckLogin
     @CheckPermission("student")
     @GetMapping("/perm1")
@@ -49,6 +56,7 @@ public class MockController {
         return "success";
     }
 
+    // pass - the UserAuthVo has "user" permission
     @CheckLogin
     @CheckPermission("user")
     @GetMapping("/perm2")
