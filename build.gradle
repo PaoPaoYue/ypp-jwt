@@ -8,7 +8,7 @@ plugins {
 
 group = "com.github.paopaoyue"
 archivesBaseName = "ypp-jwt"
-version = "1.0.0"
+version = "1.0.2"
 sourceCompatibility = '1.8'
 
 repositories {
@@ -29,7 +29,15 @@ test {
 }
 
 bootJar {
-   mainClassName = 'NONE'
+	enabled = false
+}
+
+jar {
+	enabled = true
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
 }
 
 tasks.withType(Javadoc) {

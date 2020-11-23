@@ -1,5 +1,5 @@
 # ypp-jwt
-<a href="https://search.maven.org/artifact/com.github.paopaoyue/ypp-jwt/1.0.0/jar"><img alt="Maven Central" src="https://img.shields.io/maven-central/v/com.github.paopaoyue/ypp-jwt"></a>
+<a href="https://search.maven.org/artifact/com.github.paopaoyue/ypp-jwt/1.0.2/jar"><img alt="Maven Central" src="https://img.shields.io/maven-central/v/com.github.paopaoyue/ypp-jwt"></a>
 <a href="https://github.com/PaoPaoYue/ypp-jwt/blob/main/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/paopaoyue/ypp-jwt"></a>
 <br>
 A simple JWT authorization framework for Spring Boot applications. 
@@ -11,14 +11,14 @@ Some ideas and codes come from:
 ### Installation
 **Gradle**
 ```groovy
-    implementation 'com.github.paopaoyue:ypp-jwt:1.0.0'
+    implementation 'com.github.paopaoyue:ypp-jwt:1.0.2'
 ```
 **Maven**
 ```xml
     <dependency>
       <groupId>com.github.paopaoyue</groupId>
       <artifactId>ypp-jwt</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.2</version>
     </dependency>
 ```
 
