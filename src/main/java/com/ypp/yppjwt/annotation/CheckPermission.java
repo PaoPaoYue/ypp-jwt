@@ -10,14 +10,12 @@ import java.lang.annotation.Target;
 public @interface CheckPermission {
 
     /**
-     * 权限码数组 ，String类型
-     * @return .
+     * @return 权限列表
      */
     String [] value() default {};
 
     /**
-     * false=必须全部具有，true=只要具有一个就可以通过
-     * @return .
+     * @return 是否满足一个权限即可通过
      */
     boolean any() default false;
 
